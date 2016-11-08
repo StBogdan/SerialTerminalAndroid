@@ -13,9 +13,73 @@
     tools:context="com.comp3215.group1.serialterminal.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
-        android:id="@+id/sample_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Input command here"
+            android:ems="10"
+            android:id="@+id/editCommand"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/buttonCommand" />
+
+        <Button
+            android:text="Send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/buttonCommand" />
+
+        <Button
+            android:text="List USB devices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/buttonCommand"
+            android:id="@+id/usbButton"
+            android:layout_alignStart="@+id/buttonCommand" />
+
+        <Button
+            android:text="Get Cable references"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonConfig"
+            android:layout_above="@+id/buttonCommand"
+            android:layout_toStartOf="@+id/buttonCommand"
+            android:layout_alignTop="@+id/usbButton" />
+
+        <Button
+            android:text="Attempt communication"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonCommSend"
+            android:layout_alignBottom="@+id/buttonConfig"
+            android:layout_toStartOf="@+id/buttonConfig"
+            android:layout_alignTop="@+id/buttonConfig" />
+
+        <TextView
+            android:text="Connection status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/connectionView"
+            android:layout_above="@+id/usbButton"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:text="displayOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/outputDisplay"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
 </RelativeLayout>
